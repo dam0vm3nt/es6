@@ -1,0 +1,48 @@
+<html>
+<head>
+<script>
+'use strict';
+</script>
+<script src="src/webcomponentsjs/webcomponents-lite.min.js" async></script>
+<link rel="import" href="src/polymer/polymer.html">
+@IMPORT_SCRIPTS@
+</head>
+<body>
+    <dom-module id='my-tag'>
+      <template>
+        hello world from dart es6!
+      </template>
+    <script>
+    dart_library.library('bootstrap', null, /* Imports */[
+      'dart_sdk','polymer_es6'
+    ], function load__polymer_es6(exports, dart_sdk,poly) {
+      'use strict';
+
+      const index = poly.index;
+      const bootstrap = Object.create(null);
+
+
+      console.log("poly.index.TestElement");
+
+        index.TestElement.prototype.beforeRegister = function() {
+            this.is ='my-tag';
+        }
+
+
+      bootstrap.main = function() {
+        Polymer(index.TestElement);
+      }
+
+      exports.bootstrap =  bootstrap;
+
+    });
+
+    	// Start the main in module 'bootstrap'
+    	dart_library.start('bootstrap','bootstrap');
+    </script>
+    </dom-module>
+
+
+    <my-tag></my-tag>
+</body>
+</html>

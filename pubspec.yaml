@@ -1,0 +1,3 @@
+name: polymer_es6
+dependencies:
+ logging: any
