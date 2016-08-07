@@ -10,7 +10,17 @@
 <body>
     <dom-module id='my-tag'>
       <template>
-        hello world from dart es6!
+          <style>
+              #ciccio {
+                  display: inline-block;
+                  padding: 1em;
+                  border: 1px solid black;
+                  background-color: grey;
+              }
+          </style>
+        hello world from dart es6 : [[name]] !
+
+          <div id='ciccio' on-click="clicked">Cliccami</div>
       </template>
     <script>
     dart_library.library('bootstrap', null, /* Imports */[
@@ -25,7 +35,7 @@
       console.log("poly.index.TestElement");
 
         index.TestElement.prototype.beforeRegister = function() {
-            this.is ='my-tag';
+            this.is = this.beforeRegisterDart();
         }
 
 
