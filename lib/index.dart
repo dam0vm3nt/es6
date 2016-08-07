@@ -1,36 +1,16 @@
 import 'dart:html';
 import 'dart:js';
+import 'package:web_components_mini/web_components.dart';
+import 'package:web_components_mini/interop.dart';
 
 
-abstract class TestElement  {
-
-  String get name;
-
-  set name(v);
-
-  var $;
-
-  var properties;
-
-  beforeRegisterDart() {
-    this.properties = new JsObject.jsify({
-      'name': {
-        'type': 'String'
-      }
-    });
-    return "my-tag";
-  }
-
-  void attached() {
-    print("ATTACHED!");
-    name = "pippolo";
-  }
-
-  void clicked(MouseEvent ev,b) {
-    print("CLICKED : ${ev.target} , ${b}");
-    var p = $['ciccio'];
-    name="cicciolo ${b} , ${$}";
-  }
+class MyTag extends HtmlElement{
+  MyTag.created() : super.created();
 
 }
 
+
+main() {
+  Type myTag = MyTag;
+  document.registerElement('my-tag',myTag);
+}

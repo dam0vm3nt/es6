@@ -1,18 +1,20 @@
 name: polymer_es6
 dependencies:
  logging: any
- web_components: '>=0.12.0 <0.13.0'
+ web_components_mini:
+  path: ../web-components-mini
+# web_components: '>=0.12.0 <0.13.0'
 dependency_overrides:
- html: 0.13.0
- barback:
-  path: ../barback
- source_maps:
-  path: ../source_maps
- isolate:
-  path: ../isolate
- code_transformers:
-  path: ../code_transformers
- initialize:
-  path: ../initialize
- web_components:
-  path: ../web-components
+# html: 0.13.0
+# barback:
+#  path: ../barback
+# source_maps:
+#  path: ../source_maps
+# isolate:
+#  path: ../isolate
+# code_transformers:
+#  path: ../code_transformers
+# initialize:
+#  path: ../initialize
+# web_components:
+#  path: ../web-components
