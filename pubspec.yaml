@@ -1,10 +1,11 @@
 name: polymer_es6
 dependencies:
  logging: any
+ js: any
  web_components_mini:
   path: ../web-components-mini
 # web_components: '>=0.12.0 <0.13.0'
-dependency_overrides:
+#dependency_overrides:
 # html: 0.13.0
 # barback:
 #  path: ../barback
